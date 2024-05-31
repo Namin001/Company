@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Namin Sri Nandhan</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    .hero {
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(rgba(12, 3, 51, 0.3), rgba(12, 3, 51, 0.3));
+        position: relative;
+        padding: 0 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center; /* Center align the content */
+        flex-direction: column; /* Stack the logo and text vertically */
+    }
+    nav {
+        width: 200px; /* Fixed width for the vertical nav */
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        padding: 20px 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        background: rgba(12, 3, 51, 0.8); /* Background for nav */
+        border-radius: 0 10px 10px 0; /* Rounded right edges */
+    }
+    nav ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+    nav ul li {
+        width: 100%;
+        margin-bottom: 80px; /* Increased margin for more gap */
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 17px;
+        display: block;
+        text-align: left;
+        padding: 10px 20px;
+        width: 100%;
+    }
+    nav ul li a:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+    }
+    .content {
+        text-align: center;
+        margin-top: 20px; /* Add some margin to separate from the nav bar */
+    }
+    .content .logo {
+        height: 150px; /* Increased height */
+        width: auto; /* Auto width to maintain aspect ratio */
+        margin-bottom: 20px;
+    }
+    .content h1 {
+        font-size: 60px;
+        color: lightgrey;
+        font-weight: 600;
+        transition: 0.5s;
+    }
+    .content h1:hover {
+        -webkit-text-stroke: 2px #fff;
+        color: transparent;
+    }
+    .content h2 {
+        font-size: 20px;
+        color: lightgrey;
+        font-weight: 300;
+        transition: 0.5s;
+    }
+    .content a {
+        text-decoration: none;
+        display: inline-block;
+        color: #fff;
+        font-size: 20px;
+        border: 2px solid #fff;
+        padding: 14px 70px;
+        border-radius: 50px;
+        margin-top: 20px;
+    }
+    .vid {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(10px); /* Add blur to the background */
+    }
+    .popup-content {
+        background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+        padding: 20px;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 600px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add shadow for better visibility */
+        backdrop-filter: blur(10px); /* Add blur effect to popup content */
+    }
+    .popup-content h2 {
+        margin-bottom: 20px;
+    }
+    .popup-content p {
+        margin-bottom: 20px;
+    }
+    .close-btn {
+        background: #333;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<div class="hero">
+    <video autoplay loop muted playsinline class="vid">
+        <source src="3.mp4" type="video/mp4">
+    </video>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="openPopup('about')">About Us</a></li>
+            <li><a href="#" onclick="openPopup('skills')">Skills and Expertise</a></li>
+            <li><a href="#" onclick="openPopup('achievements')">Achievements</a></li>
+            <li><a href="#" onclick="openPopup('contact')">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <img src="log.png" alt="Company Logo" class="logo"> <!-- Company Logo -->
+        <h1>Infinity Security Solutions</h1>
+        <h2>Cyber Security • Pentesting • Web Developing</h2>
+        <a href="#" onclick="openPopup('about')">Explore</a>
+    </div>
+</div>
+
+<!-- Popup Sections -->
+<div id="about" class="popup">
+    <div class="popup-content">
+        <h2>About Us</h2>
+        <p>
+            At Infinity Security Solutions, we are passionate about cybersecurity and dedicated to providing innovative solutions to protect businesses from evolving digital threats. Founded in [Year], our team of cybersecurity experts brings together decades of experience in defending organizations of all sizes against cyberattacks.</p>
+            <h4>
+            Our Mission</h4>
+            <p>Our mission is to empower businesses to navigate the complex landscape of cybersecurity with confidence. We strive to deliver cutting-edge technologies and proactive strategies that enable our clients to stay ahead of emerging threats and safeguard their valuable assets.</p>
+            <h4>
+            Our Values</h4>
+            Integrity: We operate with the highest ethical standards, maintaining transparency and honesty in all our interactions.
+            Excellence: We are committed to excellence in everything we do, delivering top-quality solutions and services to our clients.
+            Innovation: We embrace innovation and continuously explore new ideas and technologies to enhance cybersecurity effectiveness.
+            Collaboration: We believe in the power of collaboration and work closely with our clients to develop tailored cybersecurity solutions that meet their unique needs.
+            Continuous Learning: We foster a culture of continuous learning and professional development, staying updated with the latest trends and best practices in cybersecurity.
+            Why Choose Infinity Security Solutions?
+            Expertise: Our team comprises seasoned cybersecurity professionals with extensive experience in the industry, ensuring that you receive the highest level of expertise and guidance.
+            Customized Solutions: We understand that every business is unique, which is why we offer customized cybersecurity solutions tailored to your specific requirements and challenges.
+            Proactive Approach: Rather than waiting for threats to emerge, we take a proactive approach to cybersecurity, identifying and mitigating risks before they become serious issues.
+            Customer-Centric Service: Your satisfaction is our top priority. We are committed to delivering exceptional service and support, providing timely assistance whenever you need it.
+            Results-Driven: We measure our success by the tangible results we achieve for our clients. Our track record of success speaks for itself, demonstrating our ability to deliver real value and impact.</p>
+        <button class="close-btn" onclick="closePopup('about')">Close</button>
+    </div>
+</div>
+<div id="skills" class="popup">
+    <div class="popup-content">
+        <h2>Skills and Expertise</h2>
+        <p>Penetration Testing (Pen Testing): This involves testing computer systems, networks, or web applications to find vulnerabilities that could be exploited by attackers. Pen testers need to be proficient in using various tools and techniques to simulate attacks and identify weaknesses.
+
+            Incident Response: Cybersecurity incidents are inevitable, and having a strong incident response capability is crucial. This involves creating and implementing plans to detect, respond to, and recover from security breaches effectively.
+            
+            Security Operations Center (SOC) Management: SOC analysts monitor networks for security incidents and respond to alerts in real-time. SOC managers oversee these operations, ensuring that the SOC team is well-equipped to handle threats efficientlys</p>
+        <button class="close-btn" onclick="closePopup('skills')">Close</button>
+    </div>
+</div>
+<div id="achievements" class="popup">
+    <div class="popup-content">
+        <h2>Achievements</h2>
+        <h4>Recognition and Awards</h4>
+          <p>  Industry Accolades: Infinty Secutiy Solutions has been recognized by leading industry organizations for our contributions to the cybersecurity field. Our commitment to excellence and innovation has earned us prestigious awards and accolades, including [mention specific awards].
+            Client Success Stories
+            Successful Implementations: We take pride in our track record of successful cybersecurity implementations for clients across various industries. Our solutions have helped businesses enhance their security posture, mitigate risks, and achieve their strategic objectives.
+            
+            <b>Testimonials: </b>Hear from our satisfied clients about their experiences working with Infinity Software Solutions. Our testimonials highlight the tangible benefits and positive outcomes they have achieved through our cybersecurity solutions.</p>
+            
+           <p> <b>Thought Leadership</b>
+            Published Research and Insights: Our team of cybersecurity experts regularly publishes research papers, articles, and thought leadership pieces on emerging trends, best practices, and innovative approaches in cybersecurity. We share our insights to educate and empower businesses to navigate the ever-changing threat landscape.
+            
+           <b> Speaker Engagements: </b>Our experts are frequently invited to speak at industry conferences, seminars, and webinars, where they share their knowledge and expertise with fellow professionals. These speaking engagements demonstrate our thought leadership and commitment to advancing the cybersecurity discourse.</p>
+            
+            <p><b>Community Engagement</b>
+            Educational Initiatives: Infinity Security Solutions is committed to promoting cybersecurity awareness and education. We actively participate in community outreach programs, workshops, and training sessions to educate individuals and organizations about cybersecurity risks and preventive measures.
+            
+           <b> Partnerships and Collaborations:</b> We collaborate with academic institutions, nonprofit organizations, and government agencies to support initiatives aimed at strengthening cybersecurity capabilities and fostering collaboration within the cybersecurity ecosystem.</p>
+            
+           <p><b> Impact and Growth</b>
+            Business Milestones: Over 6 years of operation, Infinity Security Solutions has achieved significant milestones and milestones, including Biggest Share Growth In India.
+            
+           <b> Global Reach:</b> Our impact extends beyond Tamilnadu as we serve clients across India. Our global footprint reflects our commitment to addressing cybersecurity challenges on a global scale and making a positive difference in the digital landscape.</p>
+        <button class="close-btn" onclick="closePopup('achievements')">Close</button>
+    </div>
+</div>
+<div id="contact" class="popup">
+    <div class="popup-content">
+        <h2>Contact Us</h2>
+        <p>Contact information or form.</p>
+        <button class="close-btn" onclick="closePopup('contact')">Close</button>
+    </div>
+</div>
+
+<script>
+    function openPopup(id) {
+        document.getElementById(id).style.display = 'flex';
+    }
+
+    function closePopup(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+</script>
+</body>
+</html>
